@@ -18,7 +18,7 @@ st.set_page_config(page_title="猜數字遊戲 Pro", page_icon=icon_url)
 # PWA 標籤注入
 st.markdown(
     """
-    <link rel="manifest" href="https://raw.githubusercontent.com/RobertJiunTingJiang/guess-number-game/main/manifest.json" crossorigin="use-credentials">
+    <link rel="manifest" href="https://raw.githubusercontent.com/RobertJiunTingJiang/guess-number-game/main/manifest.json?v=2">
     <meta name="theme-color" content="#4A90E2">
     <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/RobertJiunTingJiang/guess-number-game/main/app_icon.png">
     """,
