@@ -17,9 +17,9 @@ st.set_page_config(page_title="猜數字遊戲 Pro", page_icon="🎮")
 # PWA 標籤注入
 st.markdown(
     """
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="https://raw.githubusercontent.com/RobertJiunTingJiang/guess-number-game/main/manifest.json" crossorigin="use-credentials">
     <meta name="theme-color" content="#4A90E2">
-    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/1021/1021350.png">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/RobertJiunTingJiang/guess-number-game/main/app_icon.png">
     """,
     unsafe_allow_html=True
 )
@@ -43,7 +43,7 @@ def reset_game():
     st.session_state.game_over = False
     st.session_state.data_sent = False
 
-st.title("🎯 猜數字遊戲 (Supabase 版)")
+st.title("🎯 猜數字遊戲 v1.1 (PWA 版)")
 
 # 玩家資訊
 player_name = st.text_input("請輸入你的大名：", value="匿名玩家", key="player_name_input")
