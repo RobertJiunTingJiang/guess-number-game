@@ -12,7 +12,8 @@ SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJ
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # --- 頁面設定 ---
-st.set_page_config(page_title="猜數字遊戲 Pro", page_icon="🎮")
+icon_url = "https://raw.githubusercontent.com/RobertJiunTingJiang/guess-number-game/main/app_icon.png"
+st.set_page_config(page_title="猜數字遊戲 Pro", page_icon=icon_url)
 
 # PWA 標籤注入
 st.markdown(
