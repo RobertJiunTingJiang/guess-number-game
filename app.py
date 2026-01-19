@@ -15,10 +15,24 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 icon_url = "https://raw.githubusercontent.com/RobertJiunTingJiang/guess-number-game/main/app_icon.png"
 st.set_page_config(page_title="猜數字遊戲 Pro", page_icon=icon_url)
 
-# PWA 標籤注入
+# PWA 標籤注入 (強力修復版)
 st.markdown(
     """
-    <link rel="manifest" href="https://raw.githubusercontent.com/RobertJiunTingJiang/guess-number-game/main/manifest.json?v=2">
+    <script>
+      // 1. 找到所有現有的 manifest 連結並移除
+      var links = document.querySelectorAll('link[rel="manifest"]');
+      links.forEach(function(link) {
+        link.remove();
+      });
+
+      // 2. 創建我們正確的 manifest 連結
+      var newLink = document.createElement('link');
+      newLink.rel = 'manifest';
+      newLink.href = 'https://raw.githubusercontent.com/RobertJiunTingJiang/guess-number-game/main/manifest.json?v=3';
+      document.head.appendChild(newLink);
+      
+      console.log('PWA Manifest has been forced updated.');
+    </script>
     <meta name="theme-color" content="#4A90E2">
     <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/RobertJiunTingJiang/guess-number-game/main/app_icon.png">
     """,
